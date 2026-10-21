@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi siamo - Pixel Café</title>
+  <meta name="description" content="Scopri la storia di Pixel Café: il bar nato per chi ama il codice, la tecnologia e il caffè di qualità.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Sticky & Professionale -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="Pixel Café Homepage">
+        <img src="assets/logo.svg" alt="Logo Pixel Café" class="logo">
+        <span class="brand-text">Pixel <span class="brand-accent">Café</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigazione principale">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="chi-siamo.html" class="nav-link active" aria-current="page">Chi siamo</a>
+        <a href="index.html#orari" class="nav-link">Orari</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span>Pixel Café • Community & Specialty Coffee</span>
+      </div>
+
+      <h1 class="hero-title">Qui il codice gira meglio con un <span class="brand-accent">buon caffè</span>.</h1>
+      <p class="hero-subtitle">
+        Il punto d'incontro tra tecnologia, creatività e una buona dose di caffeina.
+      </p>
+    </section>
+
+    <!-- La nostra storia -->
+    <section class="story-section" aria-labelledby="story-heading">
+      <div class="story-card">
+        <div class="story-badge">
+          <svg class="hours-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 14 10"></polyline>
+          </svg>
+          <span>La nostra visione</span>
+        </div>
+
+        <h2 id="story-heading" class="story-title">La nostra storia</h2>
+        
+        <p class="story-text">
+          Pixel Café nasce da un'idea semplice: creare il posto perfetto per chi ama programmare, studiare o semplicemente godersi un buon caffè.
+        </p>
+        <p class="story-text">
+          Tra una riga di codice e un bug da risolvere, trovi Wi-Fi veloce, postazioni comode e tutta l'energia di cui hai bisogno.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tre card informative -->
+    <section class="features-section" aria-labelledby="features-heading">
+      <div class="section-header">
+        <h2 id="features-heading" class="section-title">I pilastri di Pixel Café</h2>
+        <p class="section-desc">Pensato per supportare ogni fase del tuo flusso di lavoro e della tua creatività.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Card 1: Caffè sempre in esecuzione -->
+        <article class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+              <line x1="14" y1="1" x2="14" y2="4"></line>
+            </svg>
+          </div>
+          <h3 class="feature-title">Caffè sempre in esecuzione</h3>
+          <p class="feature-text">Dall'Espresso.js al Cappuccino CSS, ogni pausa ha il suo linguaggio.</p>
+        </article>
+
+        <!-- Card 2: Uno spazio per le tue idee -->
+        <article class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18h6"></path>
+              <path d="M10 22h4"></path>
+              <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Uno spazio per le tue idee</h3>
+          <p class="feature-text">Che tu sia uno sviluppatore esperto o alle prime righe di HTML, qui trovi il tuo posto.</p>
+        </article>
+
+        <!-- Card 3: Persone, codice e connessioni -->
+        <article class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Persone, codice e connessioni</h3>
+          <p class="feature-text">Perché le migliori idee nascono spesso davanti a un caffè.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sezione finale / Call to Action -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="cta-card">
+        <h2 id="cta-heading" class="cta-title">Il tuo prossimo progetto parte da qui.</h2>
+        <p class="cta-desc">Vieni a trovarci. Il caffè lo prepariamo noi, al codice pensi tu!</p>
+        <div class="cta-actions">
+          <a href="menu.html" class="btn btn-primary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+              <line x1="14" y1="1" x2="14" y2="4"></line>
+            </svg>
+            Scopri il menu
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer più pulito e professionale -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Pixel Café Homepage">
+          <img src="assets/logo.svg" alt="Logo Pixel Café" class="logo">
+          <span class="brand-text">Pixel <span class="brand-accent">Café</span></span>
+        </a>
+        <p class="footer-tagline">
+          Il punto d'incontro per chi ama la tecnologia e il caffè di qualità. Prese a portata di mano, Wi-Fi stabile e una community appassionata.
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h3 class="footer-col-title">Navigazione</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="chi-siamo.html">Chi siamo</a></li>
+            <li><a href="index.html#orari">Orari di apertura</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Servizi Dev</h3>
+          <ul class="footer-links">
+            <li><span class="footer-link-text">Fibra ultraveloce</span></li>
+            <li><span class="footer-link-text">Prese 220V e USB-C</span></li>
+            <li><span class="footer-link-text">Specialty Coffee & Snack</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Pixel Café. Fatto con ☕ e passione per il codice.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

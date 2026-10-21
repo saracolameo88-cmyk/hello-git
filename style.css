@@ -1110,6 +1110,114 @@ main {
 }
 
 /* ==========================================================================
+   Chi Siamo - Story & Final CTA Styles
+   ========================================================================== */
+
+.story-section {
+  padding: 16px 0 48px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.story-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 44px 40px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.story-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-caramel) 0%, #df9758 100%);
+}
+
+.story-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-caramel);
+  margin-bottom: 12px;
+}
+
+.story-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.story-text {
+  font-size: 1.12rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.story-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Final CTA Section */
+.cta-section {
+  padding: 24px 0 36px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.cta-card {
+  background: linear-gradient(145deg, var(--bg-dark-surface) 0%, var(--bg-dark) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 50px 36px;
+  text-align: center;
+  color: var(--text-light);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-card::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(200, 112, 51, 0.22) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  color: var(--text-light);
+}
+
+.cta-desc {
+  font-size: 1.1rem;
+  color: var(--text-light-muted);
+  max-width: 560px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
 
@@ -1203,5 +1311,18 @@ main {
   .modal-container {
     padding: 30px 20px 24px;
   }
+
+  .story-card {
+    padding: 28px 20px;
+  }
+
+  .story-title {
+    font-size: 1.65rem;
+  }
+
+  .cta-card {
+    padding: 36px 20px;
+  }
 }
+
 
