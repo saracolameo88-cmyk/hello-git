@@ -4,35 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu - Pixel Café</title>
+  <meta name="description" content="Il menu di caffetteria e snack di Pixel Café per programmatori e studenti.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header Sticky & Professionale -->
   <header class="header">
-    <img src="assets/logo.svg" alt="Logo Pixel Café" class="logo">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-    </nav>
+    <div class="header-inner">
+      <a href="index.html" class="brand" aria-label="Pixel Café Homepage">
+        <img src="assets/logo.svg" alt="Logo Pixel Café" class="logo">
+        <span class="brand-text">Pixel <span class="brand-accent">Café</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigazione principale">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link active" aria-current="page">Menu</a>
+        <a href="index.html#orari" class="nav-link">Orari</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <h1>Menu</h1>
+    <div class="section-header" style="text-align: left; margin-bottom: 28px;">
+      <h1 class="section-title">Menu Caffetteria</h1>
+      <p class="section-desc">Specialty coffee, bevande energizzanti e snack per ricaricare le tue funzioni cerebrali.</p>
+    </div>
+
     <table class="menu">
       <thead>
-        <tr><th>Prodotto</th><th>Prezzo</th></tr>
+        <tr>
+          <th>Prodotto</th>
+          <th style="text-align: right;">Prezzo</th>
+        </tr>
       </thead>
       <tbody>
-        <tr><td>Espresso.js</td><td>€ 1,20</td></tr>
-        <tr><td>Cappuccino CSS</td><td>€ 1,60</td></tr>
-        <tr><td>Latte macchiato HTML</td><td>€ 1,80</td></tr>
-        <tr><td>Cornetto al commit</td><td>€ 1,40</td></tr>
-        <tr><td>Toast 404 (non trovato)</td><td>€ 3,50</td></tr>
+        <tr>
+          <td><strong>Espresso.js</strong><br><small style="color: var(--text-muted);">Monorigine 100% Arabica a rapida esecuzione</small></td>
+          <td>€ 1,20</td>
+        </tr>
+        <tr>
+          <td><strong>Cappuccino CSS</strong><br><small style="color: var(--text-muted);">Schiuma perfettamente responsive e cacao decorativo</small></td>
+          <td>€ 1,60</td>
+        </tr>
+        <tr>
+          <td><strong>Latte macchiato HTML</strong><br><small style="color: var(--text-muted);">Struttura a strati semantica con latte biologico</small></td>
+          <td>€ 1,80</td>
+        </tr>
+        <tr>
+          <td><strong>Cornetto al commit</strong><br><small style="color: var(--text-muted);">Sfoglia calda ripiena di crema al pistacchio o cioccolato</small></td>
+          <td>€ 1,40</td>
+        </tr>
+        <tr>
+          <td><strong>Toast 404 (non trovato)</strong><br><small style="color: var(--text-muted);">Pane tostato artigianale, prosciutto cotto e formaggio fuso</small></td>
+          <td>€ 3,50</td>
+        </tr>
       </tbody>
     </table>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <p>© 2026 Pixel Café</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="Pixel Café Homepage">
+          <img src="assets/logo.svg" alt="Logo Pixel Café" class="logo">
+          <span class="brand-text">Pixel <span class="brand-accent">Café</span></span>
+        </a>
+        <p class="footer-tagline">
+          Il punto d'incontro per chi ama la tecnologia e il caffè di qualità. Prese a portata di mano, Wi-Fi stabile e una community appassionata.
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h3 class="footer-col-title">Navigazione</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu caffetteria</a></li>
+            <li><a href="index.html#orari">Orari di apertura</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Servizi Dev</h3>
+          <ul class="footer-links">
+            <li><span class="footer-link-text">Fibra ultraveloce</span></li>
+            <li><span class="footer-link-text">Prese 220V e USB-C</span></li>
+            <li><span class="footer-link-text">Specialty Coffee & Snack</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Pixel Café. Fatto con ☕ e passione per il codice.</p>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

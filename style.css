@@ -1,71 +1,888 @@
+/* ==========================================================================
+   Pixel Café - Design System & Stylesheet
+   Vanilla CSS • Modern, Warm & Programmer-friendly Aesthetic
+   ========================================================================== */
+
+:root {
+  /* Color Palette: Coffee, Cream, Beige, Dark Brown, Caramel */
+  --bg-page: #fbf7f1;
+  --bg-surface: #ffffff;
+  --bg-surface-warm: #f6ede3;
+  --bg-surface-elevated: #ffffff;
+  --bg-dark: #23160e;
+  --bg-dark-surface: #301f14;
+  --bg-dark-header: rgba(35, 22, 14, 0.95);
+
+  --text-main: #2b1b11;
+  --text-muted: #6b5749;
+  --text-light: #fef9f4;
+  --text-light-muted: #c2ada0;
+
+  --accent-caramel: #c87033;
+  --accent-caramel-hover: #b45f26;
+  --accent-caramel-light: #fbeee3;
+  --accent-caramel-ring: rgba(200, 112, 51, 0.25);
+
+  --border-subtle: #ebdcca;
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(200, 112, 51, 0.4);
+
+  --success-color: #2e8540;
+  --success-bg: #eaf6ed;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 8px rgba(43, 27, 17, 0.04);
+  --shadow-md: 0 8px 24px rgba(43, 27, 17, 0.07);
+  --shadow-lg: 0 16px 36px rgba(43, 27, 17, 0.1);
+  --shadow-glow: 0 0 25px rgba(200, 112, 51, 0.2);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+}
+
+/* Base Reset & Typography */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #fdf6ec;
-  color: #3b2a1a;
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   Header & Navigation (Sticky, Clean & Professional)
+   ========================================================================== */
+
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-dark-header);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  transition: all var(--transition-base);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
-  background-color: #3b2a1a;
+}
+
+/* Brand Logo + Text */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  user-select: none;
 }
 
 .logo {
-  width: 48px;
+  width: 42px;
+  height: 42px;
+  transition: transform var(--transition-base);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
 }
 
-nav a {
-  color: #fdf6ec;
-  margin-left: 16px;
-  text-decoration: none;
+.brand:hover .logo {
+  transform: rotate(-6deg) scale(1.05);
 }
+
+.brand-text {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-light);
+}
+
+.brand-accent {
+  color: var(--accent-caramel);
+}
+
+/* Navigation Menu */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav a,
+.nav-link {
+  color: var(--text-light-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav a:hover,
+.nav-link:hover {
+  color: var(--text-light);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav a.active,
+.nav-link.active {
+  color: var(--text-light);
+  background-color: var(--accent-caramel);
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(200, 112, 51, 0.4);
+}
+
+/* ==========================================================================
+   Main Content Layout
+   ========================================================================== */
 
 main {
-  max-width: 800px;
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
-  padding: 32px;
+  padding: 40px 24px 80px;
 }
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
 
 .hero {
   text-align: center;
+  padding: 48px 16px 56px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  background-color: #c0703a;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+/* Decorative background ambient glow */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  max-width: 90%;
+  height: 380px;
+  background: radial-gradient(ellipse at center, rgba(200, 112, 51, 0.12) 0%, rgba(251, 247, 241, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
 }
 
-.quote {
-  font-style: italic;
-  min-height: 24px;
-}
-
-.menu {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.menu th,
-.menu td {
-  padding: 8px;
-  border-bottom: 1px solid #d9c3a5;
+/* Hero Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background-color: var(--accent-caramel-light);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+  max-width: 100%;
   text-align: left;
 }
 
-.footer {
+.badge-dot {
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-caramel);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(200, 112, 51, 0.25);
+  animation: pulse-dot 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.75;
+  }
+}
+
+/* Hero Typography */
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+
+/* Hero Buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background-color: var(--accent-caramel);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(200, 112, 51, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-caramel-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200, 112, 51, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-surface-warm);
+  border-color: #dbc6b2;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Interactive Quote Terminal Card */
+.quote-container {
+  width: 100%;
+  max-width: 640px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  text-align: left;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.quote-container:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.quote-header {
+  background-color: var(--bg-surface-warm);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background-color: #ef6b6b; }
+.dot-yellow { background-color: #f7b731; }
+.dot-green { background-color: #20bf6b; }
+
+.window-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.quote-body {
+  padding: 20px 24px;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+}
+
+.quote {
+  font-family: var(--font-mono);
+  font-size: 0.96rem;
+  color: var(--text-main);
+  line-height: 1.5;
+  margin: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  position: relative;
+  padding-left: 20px;
+}
+
+.quote::before {
+  content: "$";
+  position: absolute;
+  left: 0;
+  color: var(--accent-caramel);
+  font-weight: bold;
+}
+
+.quote.fade-out {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.quote.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Section: Perché scegliere Pixel Café (Features Grid)
+   ========================================================================== */
+
+.features-section {
+  padding: 48px 0 64px;
+}
+
+.section-header {
   text-align: center;
-  padding: 16px;
-  color: #8a7560;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: #dbc3ab;
+}
+
+.feature-icon-wrapper {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-md);
+  background-color: var(--accent-caramel-light);
+  border: 1px solid rgba(200, 112, 51, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-caramel);
+  margin-bottom: 22px;
+  transition: transform var(--transition-base), background-color var(--transition-base);
+}
+
+.feature-card:hover .feature-icon-wrapper {
+  transform: scale(1.08);
+  background-color: var(--accent-caramel);
+  color: #ffffff;
+}
+
+.feature-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Section: Orari (Opening Hours Card)
+   ========================================================================== */
+
+.info {
+  padding: 24px 0 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.hours-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 720px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent bar inside card */
+.hours-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-caramel) 0%, #df9758 100%);
+}
+
+.hours-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-caramel);
+  margin-bottom: 8px;
+}
+
+.hours-badge-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.hours-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.hours-subtitle {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+/* Schedule List */
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background-color: var(--bg-surface-warm);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(235, 220, 202, 0.6);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.schedule-item:hover {
+  background-color: #f2e4d5;
+  transform: translateX(3px);
+}
+
+.schedule-day {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.day-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.day-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background-color: rgba(200, 112, 51, 0.12);
+  color: var(--accent-caramel-hover);
+}
+
+.day-tag--closed {
+  background-color: rgba(107, 87, 73, 0.12);
+  color: var(--text-muted);
+}
+
+.schedule-time {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-caramel-hover);
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.schedule-item.closed .schedule-time {
+  color: var(--text-muted);
+}
+
+.server-note {
+  font-size: 0.78rem;
+  font-weight: normal;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.hours-footer {
+  padding-top: 20px;
+  border-top: 1px dashed var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.status-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--success-color);
+  box-shadow: 0 0 0 3px rgba(46, 133, 64, 0.2);
+}
+
+/* ==========================================================================
+   Menu Page Table Styles (Backward Compatible & Modernized)
+   ========================================================================== */
+
+.menu {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 24px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.menu th {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 16px 20px;
+  text-align: left;
+  letter-spacing: 0.02em;
+}
+
+.menu td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.menu tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.menu tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.menu tbody tr:hover {
+  background-color: var(--bg-surface-warm);
+}
+
+.menu td:last-child {
+  font-weight: 700;
+  color: var(--accent-caramel-hover);
+  text-align: right;
+}
+
+/* ==========================================================================
+   Footer (Clean, Professional & Polished)
+   ========================================================================== */
+
+.footer {
+  margin-top: auto;
+  background-color: var(--bg-dark);
+  color: var(--text-light-muted);
+  border-top: 1px solid var(--border-light);
+  padding: 48px 24px 28px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-tagline {
+  font-size: 0.92rem;
+  color: var(--text-light-muted);
+  max-width: 420px;
+  line-height: 1.6;
+}
+
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.footer-col-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: var(--text-light-muted);
+  font-size: 0.9rem;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--text-light);
+  transform: translateX(3px);
+}
+
+.footer-link-text {
+  font-size: 0.9rem;
+  color: var(--text-light-muted);
+}
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  text-align: center;
+  font-size: 0.86rem;
+  color: #9c8779;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-text {
+    font-size: 1.18rem;
+  }
+
+  .nav a,
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 0.88rem;
+  }
+
+  main {
+    padding: 24px 16px 60px;
+  }
+
+  .hero {
+    padding: 32px 8px 40px;
+  }
+
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 7px 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hours-card {
+    padding: 28px 20px;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .schedule-time {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-nav {
+    grid-template-columns: 1fr;
+  }
 }
